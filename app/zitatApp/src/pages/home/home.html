@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <!-- <button ion-button menuToggle> -->
+      <!-- <ion-icon name="menu"></ion-icon> -->
+    <!-- </button> -->
+    <ion-title>Besti Zitat</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="addZitat()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card *ngFor="let z of zitate">
+
+    <ion-card-header>
+      {{ z.name }} -- {{ z.datum }}
+    </ion-card-header>
+    <ion-card-content>
+      "{{ z.zitat }}"
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
