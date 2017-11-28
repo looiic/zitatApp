@@ -24,12 +24,20 @@
 
   <ion-item>
     <ion-label fixed>Datum</ion-label>
-    <ion-input type="date" [(ngModel)]="datum"></ion-input>
+    <!-- <ion-input type="date" [(ngModel)]="datum"></ion-input> -->
+    <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="datum"></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>Zitat</ion-label>
-    <ion-input type="text" [(ngModel)]="zitat"></ion-input>
+    <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
+    <ion-textarea [(ngModel)]="zitat"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Beschribig</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
+    <ion-textarea [(ngModel)]="beschreibung"></ion-textarea>
   </ion-item>
 
 </ion-list>

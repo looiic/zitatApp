@@ -20,15 +20,16 @@ export class FormPage {
   private name: string;
   private datum: string;
   private zitat: string;
+  private beschreibung: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public data: DataProvider) {
 
   }
 
   addZitat(){
-    this.data.addZitat(this.name, this.datum, this.zitat);
+    this.data.addZitat(this.name, this.datum, this.zitat, this.beschreibung);
     this.name = this.datum = this.zitat = '';
-    this.navCtrl.pop(HomePage);
+    this.navCtrl.pop();
   }
 
   ionViewDidLoad() {

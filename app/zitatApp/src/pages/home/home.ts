@@ -3,6 +3,7 @@ import { NavController, MenuController } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 
 import { FormPage } from '../form/form';
+import { DetailPage } from '../detail/detail';
 
 @Component({
   selector: 'page-home',
@@ -26,8 +27,12 @@ export class HomePage {
   }
 
   addZitat(){
-    console.log("tadaa");
     this.navCtrl.push(FormPage);
+  }
+
+  showDetail(id){
+    console.log("something")
+    this.navCtrl.push(DetailPage, { "id": id });
   }
 
 }

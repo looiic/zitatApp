@@ -40,18 +40,49 @@ export class DataProvider {
       .map((res: Response) => res.json())
   }
 
-  addZitat(name: string, datum: string, zitat: string){
+  getSingleZitat(id: string){
+    return this.http.get(this.url + '/zitat/' + id, this.requestOpts)
+      //.map(res => res.json());
+      .map((res: Response) => res.json())
+  }
+
+  addZitat(name: string, datum: string, zitat: string, beschreibung: string){
       let body = {
         "name": name,
         "datum": datum,
-        "zitat": zitat
+        "zitat": zitat,
+        "beschreibung": beschreibung
       }
      return this.http.post(this.url + '/zitat', JSON.stringify(body), this.requestOpts)
     .subscribe(res => {
       console.log(res);
-    }, (err) => {
-      //reject(err);
-    });
+      }, (err) => {
+        //reject(err);
+      });
+  }
+
+  changeZitat(id: string, name: string, datum: string, zitat: string, beschreibung: string){
+    let body = {
+      "name": name,
+      "datum": datum,
+      "zitat": zitat,
+      "beschreibung": beschreibung
+    }
+    return this.http.put(this.url + '/zitat/' + id, JSON.stringify(body), this.requestOpts)
+   .subscribe(res => {
+     console.log(res);
+     }, (err) => {
+       //reject(err);
+     });
+  }
+
+  deleteZitat(id: string){
+    return this.http.delete(this.url + '/zitat/' + id, this.requestOpts)
+   .subscribe(res => {
+     console.log(res);
+       }, (err) => {
+         //reject(err);
+       });
   }
 
 }

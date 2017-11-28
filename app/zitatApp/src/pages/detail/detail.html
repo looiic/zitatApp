@@ -1,0 +1,64 @@
+<!--
+  Generated template for the FormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Zitat details</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="changeZitat()" *ngIf="isenabled === false">
+        Bearbeite
+      </button>
+      <button ion-button (click)="cancel()" *ngIf="isenabled === true">
+        Abbreche
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label fixed>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="name" [disabled]="!isenabled"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Datum</ion-label>
+    <!-- <ion-input type="date" [(ngModel)]="datum"></ion-input> -->
+    <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="datum" [disabled]="!isenabled"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Zitat</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
+    <ion-textarea [(ngModel)]="zitat" [disabled]="!isenabled"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Beschribig</ion-label>
+    <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
+    <ion-textarea [(ngModel)]="beschreibung" [disabled]="!isenabled"></ion-textarea>
+  </ion-item>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="saveZitat()" *ngIf="isenabled === true">Änderig speichere</button>
+  </div>
+
+</ion-list>
+
+
+</ion-content>
+
+<ion-footer>
+  <div padding>
+    <button ion-button color="danger" block (click)="deleteZitat()" *ngIf="isenabled === true">Zitat lösche</button>
+  </div>
+</ion-footer>

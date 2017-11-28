@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/form/form';
+import { DetailPage } from '../pages/detail/detail';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,7 +16,8 @@ import { DataProvider } from '../providers/data/data';
   declarations: [
     MyApp,
     HomePage,
-    FormPage
+    FormPage,
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import { DataProvider } from '../providers/data/data';
   entryComponents: [
     MyApp,
     HomePage,
-    FormPage
+    FormPage,
+    DetailPage
   ],
   providers: [
     StatusBar,
