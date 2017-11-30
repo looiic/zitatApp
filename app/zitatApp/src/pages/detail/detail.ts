@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { DataProvider } from '../../providers/data/data';
 
@@ -56,12 +56,5 @@ export class DetailPage {
     this.navCtrl.pop();
   }
 
-  @ViewChild('myInput1') myInput1: ElementRef;
-  @ViewChild('myInput2') myInput2: ElementRef;
-
-  resize() {
-      this.myInput1.nativeElement.style.height = this.myInput1.nativeElement.scrollHeight + 'px';
-      this.myInput2.nativeElement.style.height = this.myInput2.nativeElement.scrollHeight + 'px';
-  }
 
 }

@@ -36,19 +36,19 @@
     <ion-datetime displayFormat="DD.MM.YYYY" [(ngModel)]="datum" [disabled]="!isenabled"></ion-datetime>
   </ion-item>
 
-  <ion-item>
-    <ion-label fixed>Zitat</ion-label>
+  <!-- <ion-item> -->
+    <ion-label>Zitat</ion-label>
     <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
-    <ion-textarea [(ngModel)]="zitat" [disabled]="!isenabled"></ion-textarea>
-    <textarea #myInput1 id="myInput1" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="zitat" [disabled]="!isenabled"></textarea>
-  </ion-item>
+    <ion-textarea [(ngModel)]="zitat" [disabled]="!isenabled" rows="5"></ion-textarea>
+    <!-- <textarea #myInput1 id="myInput1" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="zitat" [disabled]="!isenabled"></textarea> -->
+  <!-- </ion-item> -->
 
-  <ion-item>
-    <ion-label fixed>Beschribig</ion-label>
+  <!-- <ion-item> -->
+    <ion-label>Beschribig</ion-label>
     <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
-    <ion-textarea [(ngModel)]="beschreibung" [disabled]="!isenabled"></ion-textarea>
-    <textarea #myInput2 id="myInput2" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="beschreibung" [disabled]="!isenabled"></textarea>
-  </ion-item>
+    <ion-textarea [(ngModel)]="beschreibung" [disabled]="!isenabled" rows="5"></ion-textarea>
+    <!-- <textarea #myInput2 id="myInput2" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="beschreibung" [disabled]="!isenabled"></textarea> -->
+  <!-- </ion-item> -->
 
   <div padding>
     <button ion-button color="primary" block (click)="saveZitat()" *ngIf="isenabled === true">Änderig speichere</button>
