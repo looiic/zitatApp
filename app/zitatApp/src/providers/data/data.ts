@@ -22,7 +22,6 @@ export class DataProvider {
   private requestOpts: RequestOptions;
 
 
-
   constructor(public http: Http) {
 
     this.headers = new Headers();
