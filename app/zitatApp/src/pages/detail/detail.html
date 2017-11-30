@@ -40,12 +40,14 @@
     <ion-label fixed>Zitat</ion-label>
     <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
     <ion-textarea [(ngModel)]="zitat" [disabled]="!isenabled"></ion-textarea>
+    <textarea #myInput1 id="myInput1" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="zitat" [disabled]="!isenabled"></textarea>
   </ion-item>
 
   <ion-item>
     <ion-label fixed>Beschribig</ion-label>
     <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
     <ion-textarea [(ngModel)]="beschreibung" [disabled]="!isenabled"></ion-textarea>
+    <textarea #myInput2 id="myInput2" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="beschreibung" [disabled]="!isenabled"></textarea>
   </ion-item>
 
   <div padding>
