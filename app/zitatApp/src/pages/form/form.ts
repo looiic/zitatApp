@@ -21,13 +21,15 @@ export class FormPage {
   private datum: string;
   private zitat: string;
   private beschreibung: string;
+  private datumDate: Date;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public data: DataProvider) {
 
   }
 
   addZitat(){
-    this.data.addZitat(this.name, this.datum, this.zitat, this.beschreibung);
+    this.datumDate = new Date(this.datum + "T00:00:00");
+    this.data.addZitat(this.name, this.datumDate.getTime().toString(), this.zitat, this.beschreibung);
     this.name = this.datum = this.zitat = '';
     this.navCtrl.pop();
   }

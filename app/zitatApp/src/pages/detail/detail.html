@@ -37,16 +37,18 @@
   </ion-item>
 
   <!-- <ion-item> -->
-    <ion-label>Zitat</ion-label>
+    <ion-label class="label1">Zitat</ion-label>
+    <p *ngIf="isenabled === false">"{{ zitat }}"</p>
     <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
-    <ion-textarea [(ngModel)]="zitat" [disabled]="!isenabled" rows="5"></ion-textarea>
+    <ion-textarea [(ngModel)]="zitat" *ngIf="isenabled === true" rows="5"></ion-textarea>
     <!-- <textarea #myInput1 id="myInput1" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="zitat" [disabled]="!isenabled"></textarea> -->
   <!-- </ion-item> -->
-
+  <br>
   <!-- <ion-item> -->
-    <ion-label>Beschribig</ion-label>
-    <!-- <ion-input type="text" [(ngModel)]="zitat"></ion-input> -->
-    <ion-textarea [(ngModel)]="beschreibung" [disabled]="!isenabled" rows="5"></ion-textarea>
+    <ion-label class="label1">Beschribig</ion-label>
+    <p *ngIf="isenabled === false">{{ beschreibung }}</p>
+    <!-- <ion-input type="text" [(ngModel)]="zitat" *ngIf="isenabled === false"></ion-input> -->
+    <ion-textarea [(ngModel)]="beschreibung" *ngIf="isenabled === true" rows="5"></ion-textarea>
     <!-- <textarea #myInput2 id="myInput2" rows="2" maxLength="500" (keyup)="resize()" [(ngModel)]="beschreibung" [disabled]="!isenabled"></textarea> -->
   <!-- </ion-item> -->
 

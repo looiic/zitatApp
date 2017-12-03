@@ -25,6 +25,7 @@ export class DetailPage {
   private datum: string;
   private zitat: string;
   private beschreibung: string;
+  private datumDate: Date;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public data: DataProvider) {
     this.id = this.navParams.get('id')
@@ -47,7 +48,8 @@ export class DetailPage {
   }
 
   saveZitat(){
-    this.data.changeZitat(this.id, this.name, this.datum, this.zitat, this.beschreibung);
+    this.datumDate = new Date(this.datum + "T00:00:00");
+    this.data.changeZitat(this.id, this.name, this.datumDate.getTime().toString(), this.zitat, this.beschreibung);
     this.navCtrl.pop();
   }
 
