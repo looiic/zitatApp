@@ -32,10 +32,27 @@ export class DetailPage {
     this.data.getSingleZitat(this.id).subscribe(items => {
         this.zitate = items;
         this.name           = this.zitate.name;
-        this.datum          = this.zitate.datum;
+        //this.datum          = this.zitate.datum;
         this.zitat          = this.zitate.zitat;
         this.beschreibung   = this.zitate.beschreibung;
 
+        var today = new Date(parseInt(this.zitate.datum));
+
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+
+        var yyyy = today.getFullYear();
+        if(dd<10){
+            var d = '0'+dd.toString();
+        }else{
+          var d = dd.toString();
+        }
+        if(mm<10){
+            var m ='0'+mm;
+        }else{
+          var m = mm.toString();
+        }
+        this.datum = yyyy+'-'+m+'-'+d;
     });
   }
 

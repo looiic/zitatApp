@@ -17,7 +17,7 @@
   <ion-card *ngFor="let z of zitate" (click)="showDetail(z._id)">
 
     <ion-card-header>
-      {{ z.name }} -- {{ z.datum }}
+      {{ z.name }}  <p class="rechts">{{ z.datum }}</p>
     </ion-card-header>
     <ion-card-content>
       "{{ z.zitat }}"

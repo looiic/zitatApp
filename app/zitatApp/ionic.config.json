@@ -1,6 +1,6 @@
 {
   "name": "zitatApp",
-  "app_id": "",
+  "app_id": "b57e7de0",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
